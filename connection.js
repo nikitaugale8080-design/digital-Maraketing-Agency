@@ -1,10 +1,10 @@
 const mysql = require("mysql2");
 
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",          // XAMPP मध्ये blank असेल
-  database: "nexora_digital"
+  host: "bom2ciydnbb9rhaf7nuv-mysql.services.clever-cloud.com",
+  user: "uxueh5u0hqvpi3i6",
+  password: "MRd6NxUwdj78Mvd8BoND",          // XAMPP मध्ये blank असेल
+  database: "bom2ciydnbb9rhaf7nuv"
 });
 
 connection.connect((err) => {
