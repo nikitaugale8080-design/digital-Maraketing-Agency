@@ -1,0 +1,14 @@
+<%- include('../partials/navbar', { admin: admin }) %>
+
+<div class="container mt-5">
+  <h2>User Profile</h2>
+  <div class="card p-4 shadow-sm">
+    <p><strong>ID:</strong> <%= user.id %></p>
+    <p><strong>Name:</strong> <%= user.name %></p>
+    <p><strong>Email:</strong> <%= user.email %></p>
+    <p><strong>Role:</strong> <%= user.role || 'User' %></p>
+    <p><strong>Registered At:</strong> <%= new Date(user.created_at).toLocaleString() %></p>
+
+    <a href="/admin/users" class="btn btn-secondary mt-3">Back to Users</a>
+  </div>
+</div>

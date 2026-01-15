@@ -1,0 +1,420 @@
+<%- include('../partials/navbar', { admin: admin }) %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nexora Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{
+  --bg:#020617;        
+  --bg-soft:#020617;
+  --primary:#7c3aed;  
+  --accent:#22d3ee;    
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+}
+
+    body{
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .navbar{
+      background: var(--dark);
+      padding: 15px 0;
+    }
+    .navbar-brand{
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+.fancy-logo {
+  font-weight: 900;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #7c3aed, #22d3ee, #facc15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+.fancy-logo:hover {
+  transform: scale(1.1) rotate(-2deg);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+}
+
+
+.navbar-nav .nav-link{
+  color:#ffffff;
+  transition:.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active{
+  color:#7c3aed;
+}
+
+
+
+    .hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: slideShow 15s infinite;
+  transition: transform 1.5s ease, opacity 1.5s ease;
+}
+
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+  z-index:1;
+}
+
+
+.slide1 {
+ background-image:url('https://png.pngtree.com/thumb_back/fw800/background/20241022/pngtree-concept-of-technology-or-digital-marketing-blue-glowing-lines-and-digital-image_16437410.jpg');
+  }
+.slide2 {
+ background-image:url('https://thumbs.dreamstime.com/b/mobile-banking-network-online-payment-digital-marketing-business-people-using-phone-credit-card-icon-co-connection-154742015.jpg'); 
+ animation-delay:5s; 
+}
+.slide3 {
+ background-image:url('https://www.monkeydigital.org/wp-content/uploads/2025/05/Best-Digital-Marketing-Agencies-In-Mumbai.jpg');
+  animation-delay:10s;
+   }
+.hero-content-wrapper {
+  position: relative;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  animation: fadeInUp 1.2s ease forwards;
+}
+.hero-btn {
+  animation: fadeInUp 1.4s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hero-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideShow {
+  0%{opacity:0; transform: scale(1);}
+  10%{opacity:1; transform: scale(1.05);}
+  30%{opacity:1; transform: scale(1);}
+  40%{opacity:0; transform: scale(1);}
+  100%{opacity:0; transform: scale(1);}
+}
+
+
+    .about_border{
+        border-radius: 50px;
+        height: 400px;
+        
+    }
+    .about-text a {
+     background:#4CAF50;
+      color:#fff;
+       padding:10px 25px; 
+       border-radius:5px; 
+       transition:0.3s;
+        }
+
+    section{
+      padding: 80px 0;
+    }
+    .section-title{
+      font-weight:700;
+      margin-bottom:40px;
+      text-align:center;
+    }
+    .service-card{
+      border:none;
+      border-radius:15px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+    .service-card:hover{
+      transform:translateY(-8px);
+    }
+
+.fancy-cta {
+  background: linear-gradient(135deg, #7c3aed, #22d3ee, #facc15);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fancy-cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.fancy-btn {
+  background: #fff;
+  color: #7c3aed;
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 12px 35px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.fancy-btn::before {
+  content: '';
+  position: absolute;
+  left: -50%;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(124, 58, 237, 0.2);
+  transition: all 0.4s ease;
+  transform: skewX(-20deg);
+}
+
+.fancy-btn:hover::before {
+  width: 200%;
+}
+
+.fancy-btn:hover {
+  color: #fff;
+  background: #7c3aed;
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
+}
+
+    .carousel { background:#222; color:#fff; padding:50px; text-align:center; position:relative; overflow:hidden; }
+    .carousel .slide { display:none; font-size:18px; }
+    .carousel .slide.active { display:block; }
+    .carousel h3 { margin-bottom:10px; font-size:24px; }
+    .carousel p { font-style:italic; }
+
+    footer{
+      background:var(--dark);
+      color:#cbd5f5;
+      padding:60px 0 30px;
+    }
+    footer a{
+      color:#cbd5f5;
+      text-decoration:none;
+    }
+    footer a:hover{
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero" id="home">
+  <div class="hero-slide slide1"></div>
+  <div class="hero-slide slide2"></div>
+  <div class="hero-slide slide3"></div>
+  <div class="container hero-content-wrapper">
+    <div class="hero-content text-center">
+      <h1 class="fw-bold hero-title">Grow Your Business With Digital Marketing</h1>
+      <p class="hero-subtitle mt-3">We help brands grow online using SEO, social media, paid ads and smart strategies.</p>
+      <a href="#contact" class="btn btn-primary btn-lg hero-btn mt-3">Get Free Consultation</a>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Our Agency</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <p class="text-muted">
+          Nexora Digital is a performance-driven digital marketing agency focused on delivering real business results.
+          We combine creativity, data and technology to grow your brand online.
+        </p>
+        <a href="/about">Learn More</a>
+      </div>
+      
+      <div class="col-md-4 text-center">
+       <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?fit=crop&w=600&q=80" alt="About Us"class="about_border">
+      </div>
+    </div>
+  </div>
+</section>
+<section id="services" class="bg-light">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <a href="/services" class="text-decoration-none text-dark">
+          <div class="card service-card p-4 text-center">
+            <i class="fas fa-search fa-2x text-primary mb-3"></i>
+            <h5>SEO Optimization</h5>
+            <p class="text-muted">Rank higher on Google and get organic traffic.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="/services" class="text-decoration-none text-dark">
+          <div class="card service-card p-4 text-center h-100">
+            <i class="fab fa-instagram fa-2x text-primary mb-3"></i>
+            <h5>Social Media Marketing</h5>
+            <p class="text-muted">
+              Build brand awareness and engagement.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="/services" class="text-decoration-none text-dark">
+          <div class="card service-card p-4 text-center h-100">
+            <i class="fas fa-bullhorn fa-2x text-primary mb-3"></i>
+            <h5>Paid Advertising</h5>
+            <p class="text-muted">
+              High-converting Google & Meta ads.
+            </p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="portfolio">
+  <div class="container">
+    <h2 class="section-title">Our Work</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <a href="/portfolio">
+          <img class="img-fluid rounded"
+               src="https://images.unsplash.com/photo-1556155092-490a1ba16284">
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="/portfolio">
+          <img class="img-fluid rounded"
+               src="https://images.unsplash.com/photo-1523958203904-cdcb402031fd">
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="/portfolio">
+          <img class="img-fluid rounded"
+               src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section>
+  <div class="container">
+    <div class="cta fancy-cta text-center p-5 rounded-4">
+      <h2 class="fw-bold mb-3">Ready To Grow Your Business?</h2>
+      <p class="mb-4">Let’s create a digital strategy that works.</p>
+      <a href="#contact" class="btn btn-lg fancy-btn">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<section id="success" class="carousel">
+  <div class="slide active">
+    <h3>120% Traffic Increase!</h3>
+    <p>"Our campaigns generated amazing traffic for our clients!"</p>
+  </div>
+  <div class="slide">
+    <h3>350+ Leads Generated!</h3>
+    <p>"We helped businesses achieve record lead generation."</p>
+  </div>
+  <div class="slide">
+    <h3>2.5x ROAS Achieved!</h3>
+    <p>"Return on ad spend has never been better!"</p>
+  </div>
+</section>
+<section id="contact" class="bg-light">
+  <div class="container">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form>
+          <input type="text" class="form-control mb-3" placeholder="Your Name">
+          <input type="email" class="form-control mb-3" placeholder="Email">
+          <textarea class="form-control mb-3" rows="4" placeholder="Message">
+              
+          </textarea>
+          <button class="btn btn-primary w-100">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container text-center">
+    <p>2026 Nexora Digital Marketing Agency. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  
+  let slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide+1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 4000);
+</script>
+</body>
+</html>

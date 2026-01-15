@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at bottom, #a855f7, #1e40af, #020617);
+    color: white;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.btn-white {
+    background: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 60px;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.hero-btns button {
+    margin: 10px;
+}
+
+
+.brands {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    opacity: 0.8;
+}
+
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 60px;
+}
+
+.feature-card {
+    padding: 40px;
+    border-radius: 25px;
+}
+
+.dark {
+    background: #000;
+}
+
+.light {
+    background: linear-gradient(135deg, #c084fc, #818cf8);
+    color: black;
+}
+
+
+.steps {
+    padding: 60px;
+}
+
+.step-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.step h1 {
+    font-size: 50px;
+}
+
+
+.faq {
+    padding: 60px;
+}
+
+.faq ul li {
+    list-style: none;
+    padding: 15px 0;
+    border-bottom: 1px solid #555;
+}

@@ -1,0 +1,22 @@
+
+
+<div class="container py-5">
+  <h2 class="mb-4">Edit Service</h2>
+
+  <form action="/admin/services/edit/<%= service.id %>" method="POST">
+    <div class="mb-2">
+      <input type="text" name="title" class="form-control" value="<%= service.title %>" required>
+    </div>
+    <div class="mb-2">
+      <input type="text" name="icon" class="form-control" value="<%= service.icon %>">
+    </div>
+    <div class="mb-2">
+      <textarea name="description" class="form-control" required><%= service.description %></textarea>
+    </div>
+    <div class="mb-2">
+      <input type="number" step="0.01" name="price" class="form-control" value="<%= service.price %>" required>
+    </div>
+    <button class="btn btn-success">Update Service</button>
+    <a href="/admin/services" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>

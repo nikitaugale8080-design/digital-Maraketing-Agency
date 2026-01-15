@@ -1,0 +1,62 @@
+<%- include('../partials/navbar', { admin: admin }) %>
+
+<div class="container py-5">
+  <h2 class="mb-4">Lead Management</h2>
+
+  <div class="mb-3">
+    <a href="/admin/leads/export" class="btn btn-success">
+      <i class="fas fa-file-excel"></i> Export to Excel
+    </a>
+  </div>
+
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Message</th>
+        <th>Status</th>
+        <th>Created At</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (leads.length === 0) { %>
+        <tr>
+          <td colspan="8" class="text-center">No leads found</td>
+        </tr>
+      <% } else { %>
+        <% leads.forEach(lead => { %>
+          <tr>
+            <td><%= lead.id %></td>
+            <td><%= lead.name %></td>
+            <td><%= lead.email %></td>
+            <td><%= lead.phone %></td>
+            <td><%= lead.message %></td>
+            <td>
+              
+              
+              <form action="/admin/leads/update/<%= lead.id %>" method="POST">
+                <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+                  <option value="New" <%= lead.status === 'New' ? 'selected' : '' %>>New</option>
+                  <option value="In Progress" <%= lead.status === 'In Progress' ? 'selected' : '' %>>In Progress</option>
+                  <option value="Closed" <%= lead.status === 'Closed' ? 'selected' : '' %>>Closed</option>
+                </select>
+              </form>
+            </td>
+            <td><%= new Date(lead.created_at).toLocaleString() %></td>
+            <td>
+              <form action="/admin/leads/delete/<%= lead.id %>" method="GET" onsubmit="return confirm('Are you sure?')">
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
