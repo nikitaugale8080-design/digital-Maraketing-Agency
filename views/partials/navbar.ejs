@@ -1,52 +1,113 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <nav class="navbar navbar-expand-lg fixed-top bg-dark">
-    <div class="container">
-  
-      <a class="navbar-brand text-white fw-bold" href="/">
-        Nexora Digital
-      </a>
-  
-      <button class="navbar-toggler text-white" data-bs-toggle="collapse" data-bs-target="#menu">
-        <i class="fas fa-bars"></i>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto align-items-center">
-  
-          <li class="nav-item">
-            <a class="nav-link text-white" href="/">Home</a>
-          </li>
-  
-          <li class="nav-item">
-            <a class="nav-link text-white" href="/about">About</a>
-          </li>
-  
-          <li class="nav-item">
-            <a class="nav-link text-white" href="/services">Services</a>
-          </li>
-         
-  
-          <li class="nav-item">
-            <a class="nav-link text-white" href="/contact">Contact</a>
-          </li>
-  
-          <% if (!admin) { %>
-        
-            <li class="nav-item ms-2">
-              <a class="btn btn-outline-light btn-sm" href="/admin/login">
-                Login
+  <div class="container">
+
+    <a class="navbar-brand text-white fw-bold" href="/">Nexora Digital</a>
+
+    <button class="navbar-toggler text-white" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-center">
+
+        <!-- DIGITAL MARKETING -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">
+            Digital Marketing
+          </a>
+          <ul class="dropdown-menu p-3" style="min-width: 260px;">
+            <li><a class="dropdown-item" href="/seo/ai-seo">AI SEO</a></li>
+
+            <li><a class="dropdown-item" href="/seo/b2b-seo">B2B SEO</a></li>
+            <li><a class="dropdown-item" href="/seo/local-seo">Local SEO</a></li>
+            <li><a class="dropdown-item" href="/seo/youtube-seo">YouTube SEO</a></li>
+            <li><a class="dropdown-item" href="/seo/wordpress-seo">WordPress SEO</a></li>
+            <li><a class="dropdown-item" href="/seo/ecommerce-seo">E-commerce SEO</a></li>
+            <li><a class="dropdown-item" href="/seo/international-seo">International SEO</a></li>
+
+            <li><hr class="dropdown-divider"></li>
+
+            <li class="text-center">
+              <a href="/seo-services" class="btn btn-primary btn-sm w-100">
+                View SEO Services
               </a>
             </li>
-          <% } else { %>
-           
-            <li class="nav-item ms-2">
-              <a class="btn btn-danger btn-sm" href="/admin/logout">
-                Logout
-              </a>
-            </li>
-          <% } %>
-        </ul>
-      </div>
+          </ul>
+        </li>
+
+        <!-- SEM -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">
+            SEM
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/sem/google-ads">Google Ads</a></li>
+            <li><a class="dropdown-item" href="/sem/youtube-ads">Youtube Ads</a></li>
+            <li><a class="dropdown-item" href="/sem/instagram-ads">Instagram Ads</a></li>
+            <li><a class="dropdown-item" href="/sem/facebook-ads">Facebook Ads</a></li>
+          </ul>
+        </li>
+
+        <!-- SMO -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">
+            SMO
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/smo/youtube-marketing">YouTube Marketing</a></li>
+            <li><a class="dropdown-item" href="/smo/linkedin-marketing">LinkedIn Marketing</a></li>
+            <li><a class="dropdown-item" href="/smo/instagram-marketing">Instagram Marketing</a></li>
+            <li><a class="dropdown-item" href="/smo/facebook-marketing">Facebook Marketing</a></li>
+            <li><a class="dropdown-item" href="/smo/twitter-marketing">Twitter Marketing</a></li>
+          </ul>
+        </li>
+
+        <!-- DESIGN -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">
+            Design
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/design/web">Web Design</a></li>
+            <li><a class="dropdown-item" href="/design/wordpress">WordPress Design</a></li>
+            <li><a class="dropdown-item" href="/design/graphic">Graphic Design</a></li>
+            <li><a class="dropdown-item" href="/design/video">Video Editing</a></li>
+            <li><a class="dropdown-item" href="/design/emailer">Emailer Design</a></li>
+          </ul>
+        </li>
+
+        <!-- RESOURCES -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">
+            Resources
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/about">About Us</a></li>
+            <li><a class="dropdown-item" href="/blog">Blog</a></li>
+            <li><a class="dropdown-item" href="/career">Career</a></li>
+          </ul>
+        </li>
+
+        <!-- HOSTING -->
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/hosting">Hosting</a>
+        </li>
+
+        <!-- LETS TALK -->
+        <li class="nav-item ms-3">
+          <a class="btn btn-warning btn-sm" href="/contact">
+            Let’s Talk
+          </a>
+        </li>
+
+      
+
+      </ul>
     </div>
-  </nav>
-  
+  </div>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

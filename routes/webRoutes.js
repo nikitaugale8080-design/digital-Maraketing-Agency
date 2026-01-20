@@ -304,4 +304,72 @@ router.get("/admin/blogs/delete/:id", (req,res)=>{
     res.redirect("/admin/blogs");
   });
 });
+/* ========= SEO PAGES ========= */
+
+router.get("/seo/ai-seo", (req, res) => {
+  res.render("seo/ai-seo");
+});
+
+router.get("/seo/b2b-seo", (req, res) => {
+  res.render("seo/b2b-seo");
+});
+
+router.get("/seo/local-seo", (req, res) => {
+  res.render("seo/local-seo");
+});
+
+router.get("/seo/youtube-seo", (req, res) => {
+  res.render("seo/youtube-seo");
+});
+
+router.get("/seo/wordpress-seo", (req, res) => {
+  res.render("seo/wordpress-seo");
+});
+
+router.get("/seo/ecommerce-seo", (req, res) => {
+  res.render("seo/ecommerce-seo");
+});
+
+router.get("/seo/international-seo", (req, res) => {
+  res.render("seo/international-seo");
+});
+router.get("/sem/google-ads", (req, res) => {
+  res.render("sem/google-ads");
+});
+
+router.get("/sem/youtube-ads", (req, res) => {
+  res.render("sem/youtube-ads");
+});
+
+router.get("/sem/instagram-ads", (req, res) => {
+  res.render("sem/instagram-ads");
+});
+
+router.get("/sem/facebook-ads", (req, res) => {
+  res.render("sem/facebook-ads");
+});
+/* ======================
+   SMO PAGES
+====================== */
+
+router.get("/smo/youtube", (req, res) => {
+  res.render("smo/youtube-marketing");
+});
+
+router.get("/smo/linkedin", (req, res) => {
+  res.render("smo/linkedin-marketing");
+});
+
+router.get("/smo/instagram", (req, res) => {
+  res.render("smo/instagram-marketing");
+});
+
+router.get("/smo/facebook", (req, res) => {
+  res.render("smo/facebook-marketing");
+});
+
+router.get("/smo/twitter", (req, res) => {
+  res.render("smo/twitter-marketing");
+});
+
 module.exports = router;
